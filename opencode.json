@@ -1,7 +1,6 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "model": "ollama/qwen3.5:4b",
-  "small_model": "ollama/qwen3.5:4b",
   "enabled_providers": [
     "ollama"
   ],
@@ -15,11 +14,26 @@
       "models": {
         "qwen3.5:4b": {
           "name": "qwen3.5:4b",
-          "limit": {
-            "context": 32768,
-            "output": 4096
+          "options": {
+            "context": 20480,
+            "output": 8192
           }
         }
+      }
+    }
+  },
+  "permissions": [
+    {
+      "action": "*",
+      "resource": "*",
+      "effect": "allow"
+    }
+  ],
+  "mcp": {
+    "servers": {
+      "context7": {
+        "type": "remote",
+        "url": "https://mcp.context7.com/mcp"
       }
     }
   }
